@@ -1,0 +1,36 @@
+.header {
+    position: fixed;
+    width:100%;
+    z-index:1;
+    flex-direction: row;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-logo{
+    display: flex;
+}
+.header-text{
+    display: flex;
+     flex-direction: row;
+}
+
+.login{
+    display: flex;
+     align-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.user-bar-text{
+    font-size:15px;
+}
+.video{
+    width:100%;
+}
+.video-detail{
+    text-align: left;
+}
+.video-reaction{
+    display: flex;
+}

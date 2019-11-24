@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import "./assets/css/bootstrap.css"
+import "./assets/css/style.css"
+import "../node_modules/antd/dist/antd.min.css"
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
