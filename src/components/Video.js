@@ -23,13 +23,13 @@ export default class Login extends React.Component {
             <p className="ml-3">Share by phanlequang@gmail.com</p>
             <div className=" ml-3 video-reaction">
               <div className="mt-2 font-weight-bold"> 132</div>
-              <Icon
-                style={{
-                  fontSize: 30,
-                  marginLeft: 6
-                }}
-                type="like"
-              />
+                  <Icon
+                    style={{
+                      fontSize: 30,
+                      marginLeft: 6
+                    }}
+                    type="like"
+                  />
               <div className=" ml-3 mt-2 font-weight-bold"> 132</div>
               <Icon
                 style={{
@@ -40,7 +40,7 @@ export default class Login extends React.Component {
                 type="like"
               />
             </div>
-            <p className="ml-3">
+            <div className="ml-3 mt-1">
               <b>Descriptipn : </b>
               Pinned by TaLaGio TaLaGio 3 days ago Một năm 2019 gần qua đi với
               biết bao nhiêu bản HIT. Dưới đây là 1 playlist tổng hợp những bản
@@ -48,7 +48,7 @@ export default class Login extends React.Component {
               Kính mời mọi người cùng nghe thử. ^^ Ai cần file MP3 không có
               quảng cáo thì hãy comment để lại email, mình sẽ gửi cho các bạn
               trong thời gian sớm nhất.
-            </p>
+            </div>
           </Col>
         </Row>
       </div>

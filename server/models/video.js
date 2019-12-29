@@ -16,8 +16,8 @@ videoModel.add = async ({
     description,
     author_id,
     author_email,
-    up_vote,
-    down_vote
+    up_vote:0,
+    down_vote:0
   });
   return await newVideo.save();
 };

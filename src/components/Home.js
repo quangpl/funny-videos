@@ -1,9 +1,39 @@
 import React from "react";
-import { Layout, Menu, Breadcrumb, Icon, Button} from "antd";
+import { Layout, Menu, Breadcrumb, Icon, Button, Dropdown } from "antd";
 import Login from "./Login";
 import UserBar from "./UserBar";
 import Video from "./Video";
 const { Header, Content, Footer } = Layout;
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.alipay.com/"
+      >
+        1st menu item
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.taobao.com/"
+      >
+        2nd menu item
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+        3rd menu item
+      </a>
+    </Menu.Item>
+  </Menu>
+);
+
+
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -17,10 +47,10 @@ export default class Home extends React.Component {
         <Header className="header">
           <div className="header-logo">
             <div className="text-white header-text">
-              <h3>
-                <Icon className="text-white" type="home" />
-              </h3>
-              <h3 className="mt-2 ml-2 text-white">Funny video</h3>
+              <Icon className="header-text-detail mr-1" type="home" />
+              <span className="header-text-detail">
+                Funny video
+              </span>
             </div>
           </div>
           <div className="header-text">
@@ -37,7 +67,9 @@ export default class Home extends React.Component {
             <Video />
             <Video />
             <Video />
-            <Button type="primary" shape="round" size="large">Load more</Button>
+            <Button type="primary" shape="round" size="large">
+              Load more
+            </Button>
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>Funny Videos © 2019</Footer>

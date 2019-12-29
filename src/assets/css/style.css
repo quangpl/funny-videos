@@ -13,7 +13,14 @@
 }
 .header-text{
     display: flex;
-     flex-direction: row;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+.header-text-detail {
+    font-size: 16px;
+    color: white;
 }
 
 .login{
@@ -33,4 +40,10 @@
 }
 .video-reaction{
     display: flex;
+}
+.ant-layout-header{
+    padding: 0 20px !important;
+}
+.text-menu{
+    font-size: 18px;
 }
