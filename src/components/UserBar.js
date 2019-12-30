@@ -1,39 +1,54 @@
 import React from "react";
-import { Layout, Menu, Breadcrumb, Icon, Input, Button, Dropdown ,Modal} from "antd";
+import {
+  Layout,
+  Menu,
+  Breadcrumb,
+  Icon,
+  Input,
+  Button,
+  Dropdown,
+  Modal
+} from "antd";
 import MediaQuery from "react-responsive";
 
-const menu = (
-  <Menu>
-    <Menu.Item>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="http://www.alipay.com/"
-      >
-        1st menu item
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="http://www.taobao.com/"
-      >
-        2nd menu item
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-        3rd menu item
-      </a>
-    </Menu.Item>
-  </Menu>
-);
+const menu = () => {
+  return (
+    <Menu>
+      <Menu.Item>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="http://www.alipay.com/"
+        >
+          1st menu item
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="http://www.taobao.com/"
+        >
+          2nd menu item
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="http://www.tmall.com/"
+        >
+          3rd menu item
+        </a>
+      </Menu.Item>
+    </Menu>
+  );
+};
 
 export default class UserBar extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    
+
     this.state = {
       visible: false
     };
@@ -44,10 +59,10 @@ export default class UserBar extends React.Component {
         <Modal
           title="Basic Modal"
           visible={this.state.visible}
-          onCancel={()=>{
+          onCancel={() => {
             this.setState({
-              visible:false
-            })
+              visible: false
+            });
           }}
         >
           <p>Some contents...</p>
@@ -63,11 +78,16 @@ export default class UserBar extends React.Component {
           <span className="text-white user-bar-text">
             Wellcome phanlequang99@gmail.com
           </span>
-          <Button type="primary" shape="round" className="ml-2" onClick={()=>{
-            this.setState({
-              visible:true
-            })
-          }}>
+          <Button
+            type="primary"
+            shape="round"
+            className="ml-2"
+            onClick={() => {
+              this.setState({
+                visible: true
+              });
+            }}
+          >
             Share a movie
           </Button>
           <Button shape="round" type="danger" className="ml-2">
