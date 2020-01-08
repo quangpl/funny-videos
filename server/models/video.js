@@ -16,8 +16,8 @@ videoModel.add = async ({
     description,
     author_id,
     author_email,
-    up_vote:0,
-    down_vote:0
+    up_vote: up_vote,
+    down_vote: down_vote
   });
   return await newVideo.save();
 };
@@ -32,3 +32,22 @@ videoModel.getAll = async () => {
   return await videoModel.fine().exec();
 };
 
+videoModel.like = async (id) => {
+  return await videoModel
+    .findByIdAndUpdate(id, {
+      $inc: {
+        up_vote:1
+      }
+    })
+    .exec();
+};
+
+videoModel.dislike = async id => {
+  return await videoModel
+    .findByIdAndUpdate(id, {
+      $inc: {
+        down_vote: 1
+      }
+    })
+    .exec();
+};

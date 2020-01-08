@@ -12,6 +12,13 @@ userModel.register = async ({ email, password }) => {
   return await newUser.save();
 };
 
+userModel.hasExist = async (email) => {
+  const newUser = await userModel.findOne({
+    email,
+  }).exec();
+  return newUser ? true : false;
+}
+
 userModel.login = async ({ email, password }) => {
 const user = await  userModel.findOne({
     email
