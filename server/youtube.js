@@ -12,17 +12,18 @@ var TOKEN_DIR =
 var TOKEN_PATH = TOKEN_DIR + "youtube-nodejs-quickstart.json";
 
 // Load client secrets from a local file.
-fs.readFile("server/client_secret.json", function processClientSecrets(
-  err,
-  content
-) {
-  if (err) {
-    console.log("Error loading client secret file: " + err);
-    return;
+fs.readFile(
+  "/Users/culicode/github/funny-videos/server/client_secret.json",
+  async function processClientSecrets(err, content) {
+    if (err) {
+      console.log("Error loading client secret file: " + err);
+      return;
+    }
+    // Authorize a client with the loaded credentials, then call the YouTube API.
+    authorize(JSON.parse(content), getChannel);
+    authorize(JSON.parse(content), await getVideo);
   }
-  // Authorize a client with the loaded credentials, then call the YouTube API.
-  authorize(JSON.parse(content), getChannel);
-});
+);
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -132,3 +133,16 @@ function getChannel(auth) {
     }
   );
 }
+
+async function getVideo(auth) {
+  var service = google.youtube("v3");
+  const res = await service.videos.list(
+    {
+      auth: auth,
+      id: "IfG6v106C0Q",
+      part: "snippet,contentDetails,statistics"
+    });
+
+    console.log(JSON.stringify(res.data.items));
+}
+
